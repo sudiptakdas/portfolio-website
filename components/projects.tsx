@@ -1,10 +1,19 @@
 import React from 'react';
 import SectionHeading from './section-heading';
+import { projectsData } from '@/lib/data';
+import { Project } from './project';
 
 export default function Projects() {
   return (
     <section>
-      <SectionHeading > <h1 className=' text-gray-900'>My Projects</h1></SectionHeading>
+      <SectionHeading>My Projects</SectionHeading>
+      <div>
+        {projectsData.map((projectData, index) => (
+          <React.Fragment key={index}>
+            <Project {...projectData} />
+          </React.Fragment>
+        ))}
+      </div>
     </section>
   );
 }
